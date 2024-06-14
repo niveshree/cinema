@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cinematography Academy</title>
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+  <!-- bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- css -->
+  <link rel="stylesheet" href="style1.css">
+
+</head>
+
+<body style="background-color: #fff !important;">
+  <div style="background-color: #000; font-family: open sans;">
+    <nav class="navbar navbar-expand-lg">
+      <a class="logo navbar-brand" href="index.html">
+        <img src="./img/cf_logo.66072b4877b8b14aa47a.webp" alt="Logo">
+      </a>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="#cour">Course</a>
+        <a class="nav-link" href="#directors">Mentors</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+      <span class="d-md-none" onclick="openNav()">&#9776;</span>
+      <div class="collapse navbar-collapse menu-links" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cour">Course</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#directors">Mentors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <!-- <li>
+            <div class="ht-ctc ht-ctc-chat ctc-analytics ctc_wp_desktop style-2 ht_ctc_animation no-animations"
+              id="ht-ctc-chat"
+              style="position: fixed; bottom: 15px; right: 15px; cursor: pointer; z-index: 99999999; width: 60%;">
+              <div class="ht_ctc_style ht_ctc_chat_style">
+                <a href="https://wa.me/9884683888" target="_blank"
+                  style="display: flex; justify-content: center; align-items: center; text-decoration: none;">
+                  <p class="ctc-analytics ctc_cta ctc_cta_stick ht-ctc-cta ht-ctc-cta-hover"
+                    style="padding: 0px 16px; line-height: 1.6; font-size: 15px; background-color: rgb(37, 211, 102); color: rgb(255, 255, 255); border-radius: 10px; margin: 0px 10px; order: 0; display: none;">
+                  </p>
+                  <svg style="pointer-events:none; display:block; height:50px; width:50px;" width="50px" height="50px"
+                    viewBox="0 0 1024 1024">
+                    <defs>
+                      <path id="htwasqicona-chat"
+                        d="M1023.941 765.153c0 5.606-.171 17.766-.508 27.159-.824 22.982-2.646 52.639-5.401 66.151-4.141 20.306-10.392 39.472-18.542 55.425-9.643 18.871-21.943 35.775-36.559 50.364-14.584 14.56-31.472 26.812-50.315 36.416-16.036 8.172-35.322 14.426-55.744 18.549-13.378 2.701-42.812 4.488-65.648 5.3-9.402.336-21.564.505-27.15.505l-504.226-.081c-5.607 0-17.765-.172-27.158-.509-22.983-.824-52.639-2.646-66.152-5.4-20.306-4.142-39.473-10.392-55.425-18.542-18.872-9.644-35.775-21.944-50.364-36.56-14.56-14.584-26.812-31.471-36.415-50.314-8.174-16.037-14.428-35.323-18.551-55.744-2.7-13.378-4.487-42.812-5.3-65.649-.334-9.401-.503-21.563-.503-27.148l.08-504.228c0-5.607.171-17.766.508-27.159.825-22.983 2.646-52.639 5.401-66.151 4.141-20.306 10.391-39.473 18.542-55.426C34.154 93.24 46.455 76.336 61.07 61.747c14.584-14.559 31.472-26.812 50.315-36.416 16.037-8.172 35.324-14.426 55.745-18.549 13.377-2.701 42.812-4.488 65.648-5.3 9.402-.335 21.565-.504 27.149-.504l504.227.081c5.608 0 17.766.171 27.159.508 22.983.825 52.638 2.646 66.152 5.401 20.305 4.141 39.472 10.391 55.425 18.542 18.871 9.643 35.774 21.944 50.363 36.559 14.559 14.584 26.812 31.471 36.415 50.315 8.174 16.037 14.428 35.323 18.551 55.744 2.7 13.378 4.486 42.812 5.3 65.649.335 9.402.504 21.564.504 27.15l-.082 504.226z">
+                      </path>
+                    </defs>
+                    <linearGradient id="htwasqiconb-chat" gradientUnits="userSpaceOnUse" x1="512.001" y1=".978"
+                      x2="512.001" y2="1025.023">
+                      <stop offset="0" stop-color="#61fd7d"></stop>
+                      <stop offset="1" stop-color="#2bb826"></stop>
+                    </linearGradient>
+                    <use xlink:href="#htwasqicona-chat" overflow="visible" style="fill: url(#htwasqiconb-chat)"
+                      fill="url(#htwasqiconb-chat)"></use>
+                    <g>
+                      <path style="fill: #FFFFFF;" fill="#FFF"
+                        d="M783.302 243.246c-69.329-69.387-161.529-107.619-259.763-107.658-202.402 0-367.133 164.668-367.214 367.072-.026 64.699 16.883 127.854 49.017 183.522l-52.096 190.229 194.665-51.047c53.636 29.244 114.022 44.656 175.482 44.682h.151c202.382 0 367.128-164.688 367.21-367.094.039-98.087-38.121-190.319-107.452-259.706zM523.544 808.047h-.125c-54.767-.021-108.483-14.729-155.344-42.529l-11.146-6.612-115.517 30.293 30.834-112.592-7.259-11.544c-30.552-48.579-46.688-104.729-46.664-162.379.066-168.229 136.985-305.096 305.339-305.096 81.521.031 158.154 31.811 215.779 89.482s89.342 134.332 89.312 215.859c-.066 168.243-136.984 305.118-305.209 305.118zm167.415-228.515c-9.177-4.591-54.286-26.782-62.697-29.843-8.41-3.062-14.526-4.592-20.645 4.592-6.115 9.182-23.699 29.843-29.053 35.964-5.352 6.122-10.704 6.888-19.879 2.296-9.176-4.591-38.74-14.277-73.786-45.526-27.275-24.319-45.691-54.359-51.043-63.543-5.352-9.183-.569-14.146 4.024-18.72 4.127-4.109 9.175-10.713 13.763-16.069 4.587-5.355 6.117-9.183 9.175-15.304 3.059-6.122 1.529-11.479-.765-16.07-2.293-4.591-20.644-49.739-28.29-68.104-7.447-17.886-15.013-15.466-20.645-15.747-5.346-.266-11.469-.322-17.585-.322s-16.057 2.295-24.467 11.478-32.113 31.374-32.113 76.521c0 45.147 32.877 88.764 37.465 94.885 4.588 6.122 64.699 98.771 156.741 138.502 21.892 9.45 38.982 15.094 52.308 19.322 21.98 6.979 41.982 5.995 57.793 3.634 17.628-2.633 54.284-22.189 61.932-43.615 7.646-21.427 7.646-39.791 5.352-43.617-2.294-3.826-8.41-6.122-17.585-10.714z">
+                      </path>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+    <br><br>
+    <div class="background">
+      <section id="hero" style="overflow: hidden;">
+        <div class="d-sm-flex d-sm-column d-md-flex" style="overflow: hidden;">
+
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12 col-md-3 order-1 order-sm-1 order-md-2">
+                <div class="img-1"></div>
+              </div>
+              <div class="col-sm-12 col-md-5 order-2 order-sm-2 order-md-1">
+                <header class="hero">
+                  <h1 style="font-family: roboto; font-weight: 800; color: #000;">Capture Your Future: Explore the
+                    Depths of AI Cinematography</h1>
+                  <h2>Enroll in Our Cinematography Course</h2>
+                  <br><br>
+                  <a href="https://api.whatsapp.com/send?phone=9884683888" target="_blank" rel="noopener noreferrer">
+                    <button type="button" class="btn btn-outline-dark text-white butt"
+                      style="background-color: #000038;">
+                      Download Syllabus
+                    </button>
+                  </a>
+                </header>
+              </div>
+              <div class="col-sm-12 col-md-3 order-3 order-sm-3 order-md-3">
+                <div class="img-2"></div>
+                <div class="img-3"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <br>
+      </section>
+    </div>
+  </div>
+  <!-- highlights -->
+  <h1 class="text-center my-5 h1">Our Unique Offerings</h1>
+  <div class="container section-2-mvi">
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <div class="card scroll">
+          <img src="img/highlights icons/EMI.png" alt="Image 1">
+          <div class="txt">
+            <p>Emi Facilities</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card scroll">
+          <img src="img/highlights icons/Award.png" alt="Image 2">
+          <div class="txt">
+            <p>Learn from Film Makers</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card scroll">
+          <img src="img/highlights icons/Tour.png" alt="Image 3">
+          <div class="txt">
+            <p>Overseas Tour</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card scroll">
+          <img src="img/highlights icons/CAmera.png" alt="Image 4">
+          <div class="txt">
+            <p>Hands on Experience</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- course -->
+  <div class="container-fluid mt-5 course" id="cour" style="overflow: hidden;">
+    <div class="row">
+      <div class="col-sm-12 col-lg-4">
+        <div class="col-lg-12 mt-5">
+          <div class="box-container">
+            <h1 class="head" style="font-size: 60px; font-weight: 900;">Join the <br>
+              <span class="spanlay">Course <br> Now!...</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-8">
+        <!-- Second column for first card -->
+        <div class="row">
+          <div class="col-sm-8 col-lg-6 mt-5">
+            <div class="box-item">
+              <div class="flip-box">
+                <div class="flip-box-front text-center" style="background-image: url('./img/course/11\ months.png');">
+                  <div class="inner color-white">
+                    <h1 class="flip-box-header" style="text-align: center;"> One month <br> course</h1>
+                  </div>
+                </div>
+                <div class="flip-box-back text-center" style="background-image: url('./img/course/11\ months.png');">
+                  <div class="inner color-white">
+                    <h6 class="flip-box-header"> Class Timing : 10am - 5pm </h6>
+                    <p class="text-center text-white">Weekly Five Days</p>
+                    <p class="text-center text-white">Course offered in all over South India</p>
+                    <a href="#one" rel="noopener noreferrer"
+                      class=""><button type="button" class="btn btn-outline-drak text-white"
+                        style="background-color: #000038;">Download
+                        Syllabus</button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Third column for second card -->
+          <div class="col-sm-8 col-lg-6 mt-5">
+            <!-- <div class="box-container-fluid"> -->
+            <div class="box-item">
+              <div class="flip-box">
+                <div class="flip-box-front text-center" style="background-image: url('./img/course/11\ months.png');">
+                  <div class="inner color-white">
+                    <h1 class="flip-box-header" style="text-align: center;">Eleven Month<br> course</h1>
+                  </div>
+                </div>
+                <div class="flip-box-back text-center" style="background-image: url('./img/course/11\ months.png');">
+                  <div class="inner color-white">
+                    <h6 class="flip-box-header">Class Timing : 10am - 5pm</h6>
+                    <p class="text-center text-white">Weekly Five Days</p>
+                    <p class="text-center text-white">Providing NFDC Certificate</p>
+                    <a href="#eleven" rel="noopener noreferrer"
+                      class=""><button type="button" class="btn btn-outline-drak text-white"
+                        style="background-color: #000038;">Download
+                        Syllabus</button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- one month -->
+   <div class="faq-title">
+    <h3 style="font-weight: 700;" class="mt-5 text-center h1">
+      Curriculum Overview</h3> <br>
+  </div>
+  <div class="container-fluid  mt-5 img-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="faq-title">
+          <h4 class="text-center" id="one" style="font-weight: 700;">One-Month Course Syllabus</h4>
+        </div>
+        <br>
+        <div class="faq-item" data-aos="fade-right">
+          <div class="faq-item-heads" onclick="toggleFaq(this)">
+            <span class="faq-item-text"><strong>Week 1 :-</strong> Foundation of Cinematography</span>
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-right">
+          <div class="faq-item-heads" onclick="toggleFaq(this)">
+            <span class="faq-item-text"><strong>Week 2 :-</strong> Advanced Techniques and Photography
+              Basics</span>
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-right">
+          <div class="faq-item-heads" onclick="toggleFaq(this)">
+            <span class="faq-item-text"><strong>Week 3 :-</strong> Color Theory, Gimbal and Camera
+              Moves</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="faq-title">
+          <h4 class="text-center" id="eleven" style="font-weight: 700;">Eleven-Months Course Syllabus</h4>
+        </div>
+        <br>
+        <div class="faq-item" data-aos="fade-right">
+          <div class="faq-item-heads" onclick="toggleFaq(this)">
+            <span class="faq-item-text"><strong>Month 1 - 6 :- </strong> Foundation in Cinematography</span>
+            <span class="faq-item-icon">
+              <i class="fa fa-chevron-down"></i>
+            </span>
+          </div>
+          <div class="faq-item-body">
+            <ul>
+              <li>
+                <h5>History of Cinema and Film Appreciation</h5>
+                <p>
+                  Explore the evolution of cinema and its profound impact on society and culture. Analyze
+                  iconic films, decode cinematic language, and gain a deeper appreciation for the art of
+                  storytelling.
+                </p>
+              </li>
+              <li>
+                <h5>Photography Fundamentals</h5>
+                <p>
+                  Master the fundamentals of photography, laying the groundwork for visual storytelling
+                  and cinematography.
+                </p>
+              </li>
+              <li>
+                <h5>Advanced Cinematography Techniques</h5>
+                <p>
+                  From lighting and composition to motion control and editing, delve into advanced
+                  techniques that push the boundaries of visual storytelling.
+                </p>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-right">
+          <div class="faq-item-heads" onclick="toggleFaq(this)">
+            <span class="faq-item-text"><strong>Month 7 - 12 :- </strong> Advanced Cinematography and Web
+              series Productions</span>
+            <span class="faq-item-icon">
+              <i class="fa fa-chevron-down"></i>
+            </span>
+          </div>
+          <div class="faq-item-body">
+            <ul>
+              <li>
+                <h5>Cinematography Post Production</h5>
+                <p>Explore the nuances of post-production, harnessing the power of cutting-edge technology
+                  to elevate your storytelling.</p>
+              </li>
+              <li>
+                <h5>Pre-Production for Web Series Production</h5>
+                <p>Bring your creative vision to life as you delve into the pre-production process for web
+                  series production. Develop concepts, scout locations, and craft budgets under the
+                  guidance of industry professionals.</p>
+              </li>
+              <li>
+                <h5>Industry Exposure and Overseas Trip</h5>
+                <p>Immerse yourself in the global film industry with an unforgettable overseas trip. Gain
+                  firsthand experience in international filmmaking practices and forge connections that
+                  last a lifetime.</p>
+              </li>
+              <li>
+                <h5>Feature Film or Web Series Production</h5>
+                <p>Collaborate with your peers to produce a feature film or web series, applying your
+                  newfound skills to create captivating content that resonates with audiences
+                  worldwide.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="faq-item" data-aos="fade-right">
+          <div class="faq-item-heads" onclick="toggleFaq(this)">
+            <span class="faq-item-text"><strong>Finally:- </strong>Assessment and Evaluation</span>
+            <span class="faq-item-icon">
+              <i class="fa fa-chevron-down"></i>
+            </span>
+          </div>
+          <div class="faq-item-body">
+            <ul>
+              <li>
+                <h5>Real-world Projects</h5>
+                <p>Showcase your skills through hands-on projects, including the production of a feature
+                  film or web series.</p>
+              </li>
+              <li>
+                <h5>Industry Visits</h5>
+                <p>Gain insights from industry experts through visits to production studios,
+                  post-production houses, and film sets.</p>
+              </li>
+              <li>
+                <h5>Global Perspective</h5>
+                <p>Broaden your horizons with an overseas trip that exposes you to diverse cultures and
+                  filmmaking practices.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- video -->
+  <video controls autoplay loop muted poster="path/to/your-poster-image.jpg"
+    style="width: 100%; overflow: hidden; margin-top: 50px;">
+    <source src="./img/cinemato.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- directors -->
+    <h1 class="text-center my-5 h1">Cinematography Masters are Our Mentors</h1>
+
+  <div class="container-fluid directors" id="directors">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+        <div class="box">
+          <img src="img/about/Aranthai_Maniyan.png" alt="Aranthai Maniyan" class="img-fluid">
+          <div class="info">
+            <h3>Aranthai Maniyan</h3>
+            <div class="share">
+              <a href="https://www.facebook.com/aranthai.manian"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-square-instagram"></i></a>
+              <a href="#"><i class="fab fa-square-twitter"></i></a>
+              <a href="#"><i class="fab fa-square-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+        <div class="box">
+          <img src="img/about/CJ_Raj_Kumar.png" alt="CJ Raj Kumar" class="img-fluid">
+          <div class="info">
+            <h3>CJ Raj Kumar</h3>
+            <div class="share">
+              <a href="https://www.facebook.com/cjrdop"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-square-instagram"></i></a>
+              <a href="#"><i class="fab fa-square-twitter"></i></a>
+              <a href="#"><i class="fab fa-square-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+        <div class="box">
+          <img src="img/about/A.Ramesh_Kumar.png" alt="A. Ramesh Kumar" class="img-fluid">
+          <div class="info">
+            <h3>A.Ramesh Kumar</h3>
+            <div class="share">
+              <a href="https://www.facebook.com/profile.php?id=100001178106025&mibextid=ZbWKwL"><i
+                  class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-square-instagram"></i></a>
+              <a href="#"><i class="fab fa-square-twitter"></i></a>
+              <a href="#"><i class="fab fa-square-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 mb-4">
+        <div class="box">
+          <img src="img/about/R.Prasanna_Venkatesh.png" alt="R. Prasanna Venkatesh" class="img-fluid">
+          <div class="info">
+            <h3>R.Prasanna Venkatesh</h3>
+            <div class="share">
+              <a href="https://www.facebook.com/rprasana.venkatesh?mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/rprasanavenkatesh?igsh=NGswN3BxODgwMDlq"><i
+                  class="fab fa-square-instagram"></i></a>
+              <a href="#"><i class="fab fa-square-twitter"></i></a>
+              <a href="#"><i class="fab fa-square-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="container" id="faq">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="text-center my-5 h1">Frequently Asked Questions</h1>
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="clearfix mb-0">
+                <a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne"><i class="fa fa-chevron-circle-down"></i> Provide more details about the
+                  overseas trip offered by Cinema
+                  Factory?</a>
+              </h2>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">The overseas trip is a unique opportunity for students to gain international
+                exposure and
+                experience.
+                It
+                typically spans three days and includes immersive activities related to the film industry, such as
+                workshops, film screenings, or visits to renowned film studios. This trip allows students to broaden
+                their
+                horizons, network with professionals, and gain insights into global filmmaking practices.</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-chevron-circle-down"></i> What
+                  courses does Cinema Factory offer?</a>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">Cinema Factory offers a one-year course in Screenplay and Direction, Digital
+                Cinematography, Film
+                Editing
+                and VFX, Acting, and Choreography as weekend courses. Cinema Factory will offer special one-month
+                professional filmmaking courses soon at various parts of South India.</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                  aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-chevron-circle-down"></i>How is
+                  the course structured?</a>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">The first six months cover the major portions of the syllabus, while the second
+                term focuses on
+                industry
+                visits and filming a web series.</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
+                  aria-expanded="false" aria-controls="collapseFour"><i class="fa fa-chevron-circle-down"></i>Are
+                  there
+                  any financial assistance options available for students?</a>
+              </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+              <div class="card-body">Yes, Cinema Factory offers EMI facilities to students.</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="clearfix mb-0">
+                <a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne"><i class="fa fa-chevron-circle-down"></i> What certifications do
+                  students
+                  receive upon completion of the
+                  course?</a>
+              </h2>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">Students receive an NFDC certificate upon completion of the course.</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-chevron-circle-down"></i> Are
+                  there
+                  placement opportunities available for graduates?</a>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">Cinema Factory strives to offer placements in the film and media industry on a
+                requirement basis.</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                  aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-chevron-circle-down"></i>What
+                  opportunities do students have for practical experience?</a>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">Students have the opportunity to shoot a web series while studying and
+                participate
+                in a 3-day
+                overseas
+                trip.</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
+                  aria-expanded="false" aria-controls="collapseFour"><i class="fa fa-chevron-circle-down"></i>Who
+                  teaches the courses at Cinema Factory?</a>
+              </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+              <div class="card-body">Our regular faculties include award-winning filmmakers who bring their expertise
+                to
+                the classroom.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end faq -->
+  <!-- contact -->
+  <h1 class="text-center my-5 h1">Contact Us</h1>
+  <div class="container mt-5" id="contact">
+    <div class="row">
+      <!-- Form Column -->
+      <div class="col-lg-7" style="margin-top: -150px;">
+        <div class="con-img">
+          <img src="./img/contact/contact.png" class="img-fluid" alt="Responsive image">
+        </div>
+      </div>
+      <!-- Image Column -->
+      <div class="col-lg-5 mb-5">
+        <form id="myForm" action="send_msg.php" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" name="location" placeholder="Enter your location"
+              required>
+          </div>
+          <button type="submit" onclick="sendEmail()" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <!-- footer -->
+  <div class="footer">
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="./img/cf_logo.66072b4877b8b14aa47a.webp" class="footer_logo" alt="Logo">
+          <h6>BigBay Cinema Factory Private Ltd.</h6>
+          <div class="number">
+            <div class="flex flex-col gap-y-4 text-gray-900">
+              <p class="text-[12px] md:text-[14px] font-semibold flex items-center gap-x-2">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                  class="text-[20px] font-bold" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="none" d="M0 0h24v24H0V0z"></path>
+                  <path
+                    d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm1 17H7V4h10v14zm-3 3h-4v-1h4v1z">
+                  </path>
+                </svg> &nbsp; +91 9884683888
+              </p>
+              <p class="text-[12px] md:text-[14px] font-semibold flex items-center gap-x-2">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                  class="text-[20px] font-bold" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="none" d="M0 0h24v24H0V0z"></path>
+                  <path
+                    d="M16 1H8C6.34 1 5 2.34 5 4v16c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3V4c0-1.66-1.34-3-3-3zm1 17H7V4h10v14zm-3 3h-4v-1h4v1z">
+                  </path>
+                </svg> &nbsp; +91 9884428688
+              </p>
+              <p class="text-[12px] md:text-[14px] font-semibold flex items-center gap-x-2">
+                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                  stroke-linejoin="round" class="text-[20px] font-bold" height="1em" width="1em"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 3h-2a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h2a2 2 0 0 0 2 -2v-14a2 2 0 0 0 -2 -2z"></path>
+                  <path d="M16 4h-11a3 3 0 0 0 -3 3v10a3 3 0 0 0 3 3h11"></path>
+                  <path d="M12 8h-6v3h6z"></path>
+                  <path d="M12 14v.01"></path>
+                  <path d="M9 14v.01"></path>
+                  <path d="M6 14v.01"></path>
+                  <path d="M12 17v.01"></path>
+                  <path d="M9 17v.01"></path>
+                  <path d="M6 17v.01"></path>
+                </svg> &nbsp; 04424815365
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 number">
+          <h3>Office <div class="bottom_line"><span></span></div>
+          </h3>
+          <p>No.271A, 3rd Floor,</p>
+          <p>Maan Sarovar Tower,<br>Scheme Road,</p>
+          <p>Teynampet, Chennai, India</p>
+          <p class="text-[12px] md:text-[14px] font-semibold flex items-center gap-x-2">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+              class="text-[20px] font-bold" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zM4 12c0-.899.156-1.762.431-2.569L6 11l2 2v2l2 2 1 1v1.931C7.061 19.436 4 16.072 4 12zm14.33 4.873C17.677 16.347 16.687 16 16 16v-1a2 2 0 0 0-2-2h-4v-3a2 2 0 0 0 2-2V7h1a2 2 0 0 0 2-2v-.411C17.928 5.778 20 8.65 20 12a7.947 7.947 0 0 1-1.67 4.873z">
+              </path>
+            </svg>&nbsp; <a href="http://www.cinemafactory.co.in" target="_blank">www.cinemafactory.co.in</a>
+          </p>
+        </div>
+        <div class="col-md-3 number">
+          <h3>Course <div class="bottom_line"><span></span></div>
+          </h3>
+          <ul style="line-height: 17px;">
+            <li><p><a href="#">Direction</a></p></li>
+            <li><p><a href="#">Cinematography</a></p></li>
+            <li><p><a href="#">CG & VFX</a></p></li>
+            <li><p><a href="#">Editing</a></p></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Follow Us <div class="bottom_line"><span></span></div>
+          </h3>
+          <div class="social_icons">
+            <ion-icon class="social_icon" name="logo-facebook"></ion-icon>
+            <ion-icon class="social_icon" name="logo-whatsapp"></ion-icon>
+            <ion-icon class="social_icon" name="logo-twitter"></ion-icon>
+            <ion-icon class="social_icon" name="logo-instagram"></ion-icon>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <ul >
+    <li>
+      <div class=" bounce2 ht-ctc ht-ctc-chat ctc-analytics ctc_wp_desktop style-2 ht_ctc_animation no-animations" id="ht-ctc-chat">
+        <div class="ht_ctc_style ht_ctc_chat_style">
+          <a href="https://wa.me/9884683888" target="_blank">
+            <svg class="whatsapp-icon" width="50px" height="50px" viewBox="0 0 1024 1024">
+              <defs>
+                <path id="htwasqicona-chat" d="M1023.941 765.153c0 5.606-.171 17.766-.508 27.159-.824 22.982-2.646 52.639-5.401 66.151-4.141 20.306-10.392 39.472-18.542 55.425-9.643 18.871-21.943 35.775-36.559 50.364-14.584 14.56-31.472 26.812-50.315 36.416-16.036 8.172-35.322 14.426-55.744 18.549-13.378 2.701-42.812 4.488-65.648 5.3-9.402.336-21.564.505-27.15.505l-504.226-.081c-5.607 0-17.765-.172-27.158-.509-22.983-.824-52.639-2.646-66.152-5.4-20.306-4.142-39.473-10.392-55.425-18.542-18.872-9.644-35.775-21.944-50.364-36.56-14.56-14.584-26.812-31.471-36.415-50.314-8.174-16.037-14.428-35.323-18.551-55.744-2.7-13.378-4.487-42.812-5.3-65.649-.334-9.401-.503-21.563-.503-27.148l.08-504.228c0-5.607.171-17.766.508-27.159.825-22.983 2.646-52.639 5.401-66.151 4.141-20.306 10.391-39.473 18.542-55.426C34.154 93.24 46.455 76.336 61.07 61.747c14.584-14.559 31.472-26.812 50.315-36.416 16.037-8.172 35.324-14.426 55.745-18.549 13.377-2.701 42.812-4.488 65.648-5.3 9.402-.335 21.565-.504 27.149-.504l504.227.081c5.608 0 17.766.171 27.159.508 22.983.825 52.638 2.646 66.152 5.401 20.305 4.141 39.472 10.391 55.425 18.542 18.871 9.643 35.774 21.944 50.363 36.559 14.559 14.584 26.812 31.471 36.415 50.315 8.174 16.037 14.428 35.323 18.551 55.744 2.7 13.378 4.486 42.812 5.3 65.649.335 9.402.504 21.564.504 27.15l-.082 504.226z"></path>
+              </defs>
+              <linearGradient id="htwasqiconb-chat" gradientUnits="userSpaceOnUse" x1="512.001" y1=".978" x2="512.001" y2="1025.023">
+                <stop offset="0" stop-color="#61fd7d"></stop>
+                <stop offset="1" stop-color="#2bb826"></stop>
+              </linearGradient>
+              <use xlink:href="#htwasqicona-chat" overflow="visible" style="fill: url(#htwasqiconb-chat)" fill="url(#htwasqiconb-chat)"></use>
+              <g>
+                <path style="fill: #FFFFFF;" fill="#FFF" d="M783.302 243.246c-69.329-69.387-161.529-107.619-259.763-107.658-202.402 0-367.133 164.668-367.214 367.072-.026 64.699 16.883 127.854 49.017 183.522l-52.096 190.229 194.665-51.047c53.636 29.244 114.022 44.656 175.482 44.682h.151c202.382 0 367.128-164.688 367.21-367.094.039-98.087-38.121-190.319-107.452-259.706zM523.544 808.047h-.125c-54.767-.021-108.483-14.729-155.344-42.529l-11.146-6.612-115.517 30.293 30.834-112.592-7.259-11.544c-30.552-48.579-46.688-104.729-46.664-162.379.066-168.229 136.985-305.096 305.339-305.096 81.521.031 158.154 31.811 215.779 89.482s89.342 134.332 89.312 215.859c-.066 168.243-136.984 305.118-305.209 305.118zm167.415-228.515c-9.177-4.591-54.286-26.782-62.697-29.843-8.41-3.062-14.526-4.592-20.645 4.592-6.115 9.182-23.699 29.843-29.053 35.964-5.352 6.122-10.704 6.888-19.879 2.296-9.176-4.591-38.74-14.277-73.786-45.526-27.275-24.319-45.691-54.359-51.043-63.543-5.352-9.183-.569-14.146 4.024-18.72 4.127-4.109 9.175-10.713 13.763-16.069 4.587-5.355 6.117-9.183 9.175-15.304 3.059-6.122 1.529-11.479-.765-16.07-2.293-4.591-20.644-49.739-28.29-68.104-7.447-17.886-15.013-15.466-20.645-15.747-5.346-.266-11.469-.322-17.585-.322s-16.057 2.295-24.467 11.478-32.113 31.374-32.113 76.521c0 45.147 32.877 88.764 37.465 94.885 4.588 6.122 64.699 98.771 156.741 138.502 21.892 9.45 38.982 15.094 52.308 19.322 21.98 6.979 41.982 5.995 57.793 3.634 17.628-2.633 54.284-22.189 61.932-43.615 7.646-21.427 7.646-39.791 5.352-43.617-2.294-3.826-8.41-6.122-17.585-10.714z"></path>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <!-- end footer -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+
+    $(document).ready(function () {
+      let currentIndex = 0;
+      const testimonials = $('.testimonial');
+
+      function showNextTestimonial() {
+        testimonials.eq(currentIndex).removeClass('active');
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        testimonials.eq(currentIndex).addClass('active');
+      }
+
+      setInterval(showNextTestimonial, 3000); // Change testimonial every 3 seconds
+    });
+
+    function openNav() {
+      document.getElementById("mySidenav").style.left = "0";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.left = "-250px";
+    }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+  <script>
+
+    TweenMax.from('.logo', 1, {
+      delay: 1.2,
+      opacity: 0,
+      x: -20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.staggerFrom('.menu-links ul li', 1, {
+      delay: 1.2,
+      opacity: 0,
+      x: -20,
+      ease: Power4.easeInOut
+    }, 0.08)
+
+    TweenMax.from('.search', 1, {
+      delay: 1.6,
+      opacity: 0,
+      x: -20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from('.cart', 1, {
+      delay: 1.8,
+      opacity: 0,
+      x: -20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.to('.border-bottom', 1, {
+      delay: 1.4,
+      width: '100%',
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from('.subtitle', 1, {
+      delay: 2.8,
+      opacity: 0,
+      x: -20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.to('.title', 1, {
+      delay: 2.2,
+      width: '100%',
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from('.desc', 1, {
+      delay: 2.8,
+      opacity: 0,
+      x: -20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.from('.readmore', 1, {
+      delay: 2.8,
+      opacity: 0,
+      x: -20,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.to('.slider', 1, {
+      delay: 3,
+      opacity: 1,
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.to('.img-1', 1, {
+      delay: 2.2,
+      width: '450px',
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.to('.img-2', 1, {
+      delay: 2.2,
+      width: '300px',
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.to('.img-3', 1, {
+      delay: 2.2,
+      width: '300px',
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.to('.first', 1.5, {
+      delay: .2,
+      left: '-100%',
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.to('.second', 1.5, {
+      delay: .4,
+      left: '-100%',
+      ease: Expo.easeInOut
+    })
+
+    TweenMax.to('.third', 1.5, {
+      delay: .6,
+      left: '-100%',
+      ease: Expo.easeInOut
+    })
+
+    // whole page animation
+    {
+      var nw = gsap.timeline({ defaults: { ease: Expo.easeInOut } });
+
+      nw.to('.overlay2', 1, {
+        top: "-100"
+      })
+      nw.to('.overlay1', 1, {
+        delay: .4,
+        top: "-100%"
+      })
+      nw.from('.container-fluid img', {
+        scale: 3, opacity: 0
+      })
+      nw.from('#h2', 1, {
+        x: -700, opacity: 0
+      })
+      nw.from('h1', 1, {
+        opacity: 0
+      })
+
+      nw.from('.right p', 1.6, {
+        opacity: 0,
+        y: 30
+      }, 'start')
+    }
+
+    {
+      gsap.to('.Limg .overlay2', 1, {
+        top: '100%'
+      })
+      gsap.to('.Limg .overlay1', 1, {
+        delay: .4,
+        top: '100%'
+      })
+    }
+    // faq
+
+
+    
+    $(document).ready(function () {
+      // Add minus icon for collapse element which is open by default
+      $(".collapse.show").each(function () {
+        $(this).prev(".card-header").addClass("highlight");
+      });
+
+      // Highlight open collapsed element 
+      $(".card-header .btn").click(function () {
+        $(".card-header").not($(this).parents()).removeClass("highlight");
+        $(this).parents(".card-header").toggleClass("highlight");
+      });
+    });
+
+    function toggleFaq(element) {
+      var body = element.nextElementSibling;
+      var icon = element.querySelector('.faq-item-icon i');
+      if (body.style.display === "none" || body.style.display === "") {
+        body.style.display = "block";
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+      } else {
+        body.style.display = "none";
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+      }
+    }
+
+    document.querySelectorAll('.faq-item-body').forEach(item => item.style.display = 'none');
+
+    // flip
+    const flipBook = (elBook) => {
+      elBook.style.setProperty("--c", 1); // Set current page to the first page (0)
+      elBook.querySelectorAll(".page").forEach((page, idx) => {
+        page.style.setProperty("--i", idx);
+        page.addEventListener("click", (evt) => {
+          if (evt.target.closest("a")) return;
+          const curr = evt.target.closest(".back") ? idx : idx + 1;
+          elBook.style.setProperty("--c", curr);
+        });
+      });
+    };
+
+    document.querySelectorAll(".book").forEach(flipBook);
+
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
