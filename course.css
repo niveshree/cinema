@@ -1,0 +1,93 @@
+.carousel-caption h1{
+    margin-bottom: 290px;
+    font-size: 70px;
+    color: #fff;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item img {
+    display: block;
+    width: 100%;
+    filter: brightness(0.7); /* Optional: Darken the image for better contrast with text */
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* White overlay with 50% opacity */
+    z-index: 1; /* Ensure the overlay is on top of the image */
+}
+
+.carousel-caption {
+    position: absolute;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    z-index: 2; /* Ensure the caption is on top of the overlay */
+    color: #000; 
+    font-weight: 700;
+    text-align: center;
+    /* border-radius: 10px; */
+}
+ 
+.main-wrapper{
+    overflow-x: hidden;
+    /* min-height: 100vh; */
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item-body {
+    display: none;
+    margin-top: 10px;
+}
+
+.faq-item-body ul {
+    list-style-type: none;
+    padding: 0;
+}
+/*  */
+.faq-title h3 {
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.faq-item-body h5 {
+    position: relative;
+    padding: 10px;
+    /* background-color: #000; */
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.faq-item-heads:hover{
+    box-shadow: 0 0 15px 0 #000;
+}
+
+.faq-item-heads {
+    cursor: pointer;
+    background-color: gray;
+    padding: 10px;
+    border-radius: 5px;
+    border-bottom: 3px solid #dee2e6;
+    color: #000;
+}
+
+
+
+@media screen and (max-width: 720px) {
+    .carousel-caption h1 {
+        margin-bottom: 30px;
+        font-size: 22px;
+        font-weight: 800;
+    }
+}
